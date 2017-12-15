@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215203838) do
+ActiveRecord::Schema.define(version: 20171215204306) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20171215203838) do
     t.string   "song_album_cover_content_type"
     t.integer  "song_album_cover_file_size"
     t.datetime "song_album_cover_updated_at"
+    t.string   "album_cover_file_name"
+    t.string   "album_cover_content_type"
+    t.integer  "album_cover_file_size"
+    t.datetime "album_cover_updated_at"
   end
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
