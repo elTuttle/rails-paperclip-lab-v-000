@@ -17174,3 +17174,21 @@ Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 1.4ms)
   [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" ASC LIMIT 1
   Rendered songs/show.html.erb (2.3ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentSongAlbumCoverToSongs (20171215203838)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "songs" ADD "song_album_cover_file_name" varchar[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "songs" ADD "song_album_cover_content_type" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "songs" ADD "song_album_cover_file_size" integer[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "songs" ADD "song_album_cover_updated_at" datetime
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171215203838"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+
